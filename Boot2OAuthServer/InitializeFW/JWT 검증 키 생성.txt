@@ -1,0 +1,15 @@
+--------------------------
+-- 공개키쌍 생성
+--------------------------
+ keytool -genkeypair -alias oauth -keyalg RSA -keysize 2048 -keypass keypass -keystore com.infoin.oauth2.server.jks -storepass storepass
+
+ 전부 엔터, 마지막에만 y
+
+ --------------------------
+-- 공개키 출력
+--------------------------
+(유닉스/리눅스) keytool -list -rfc --keystore com.infoin.oauth2.server.jks | openssl x509 -inform pem -pubkey
+(윈도우) openssl 설치 / 미설치 시, 중간에 다른 내용 포함
+
+(OS 상관없이 출력)
+src/test/java/com.infoin.JwtKeyTest.java

@@ -1,0 +1,41 @@
+-------------------------------
+-- 참고 블로그
+-------------------------------
+https://parandol.tistory.com/4
+
+-------------------------------
+-- 블로그 글 삭제 우려 위한 DB 스키마
+-------------------------------
+https://github.com/spring-projects/spring-security-oauth/blob/master/spring-security-oauth2/src/test/resources/schema.sql
+
+DB 테이블 생성 및 데이터.txt
+
+-------------------------------
+-- authorization_code, implicit
+-------------------------------
+http://localhost:8080/oauth/authorize?response_type=code&client_id=client&redirect_uri=http://localhost:8080/callback
+http://localhost:8080/oauth/authorize?response_type=code&client_id=client2&redirect_uri=http://localhost:8090/auth/callback
+
+
+-------------------------------
+-- Resource Owner Password Credentials Grant 방식
+-------------------------------
+http://localhost:8080/oauth/token
+Headers
+	Authorization
+Body
+	grant_type:password
+	username:user
+	password:qwer1234
+	scope:read_profile
+
+-------------------------------
+-- Refresh Token
+-------------------------------
+http://localhost:8080/oauth/token
+Headers
+	Authorization
+Body
+	grant_type:refresh_token
+	scope:read_profile
+	refresh_token:3be04e77-b23f-4c8c-a982-f38f48938c7f
