@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -30,7 +29,6 @@ import kr.co.test.config.mvc.HTMLCharacterEscapes;
  * @author kdk
  */
 @Configuration
-@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	private static final long MAX_AGE_SECONDS = 3600;
